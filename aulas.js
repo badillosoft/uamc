@@ -24,7 +24,9 @@ var self = {
           ][Math.floor(Math.random() * 3)];
 
           items.push({
+            id: (100 * piso + aula),
             right: {
+              class: 'text-center',
               content: '<strong>' + piso + '</strong>'
             },
             left: {
@@ -37,10 +39,16 @@ var self = {
 
       res.render('search', {
         title: 'Aulas',
-        right_size: 4,
-        left_size: 8,
-        right_title: '<h3>Piso</h3>',
-        left_title: '<h3>Aula</h3>',
+        right: {
+          class: 'text-center',
+          title: '<h3>Piso</h3>',
+          size: 3
+        },
+        left: {
+          class: 'text-left',
+          title: '<h3>Aula</h3>',
+          size: 9
+        },
         search_title: 'Escribe el nombre del piso o aula',
         items: items
       })

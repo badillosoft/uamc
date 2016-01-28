@@ -38,27 +38,27 @@
 
       <div class="sub-panel-nav">
         <div class="row">
-          <div class="col-xs-{{right_size}}">
-            {{{right_title}}}
+          <div class="col-xs-{{right.size}} text-center">
+            {{{right.title}}}
           </div>
-          <div class="col-xs-{{left_size}}">
-            {{{left_title}}}
+          <div class="col-xs-{{left.size}} text-center">
+            {{{left.title}}}
           </div>
         </div>
       </div>
 
       <div class="list-group">
         {{#items}}
-          <a class="list-group-item" href="#">
+          <a id="link_{{id}}" class="list-group-item" href="#">
             <div class="row">
-              <div class="col-xs-{{right_size}}">
+              <div class="col-xs-{{right.size}} {{right.class}}">
                 {{{right.content}}}
                 {{#right.notifications}}
                   <span class="badge pull-right"
                     style="background-color: #F77">{{right.notifications}}</span>
                 {{/right.notifications}}
               </div>
-              <div class="col-xs-{{left_size}}">
+              <div class="col-xs-{{left.size}} {{left.class}}">
                 {{{left.content}}}
                 {{#left.notifications}}
                   <span class="badge pull-right"

@@ -1,5 +1,5 @@
 git add .
 
-git commit -m "Se creo la primer interfaz para administrar las aulas"
+git commit -m "Se arreglaron algunos detalles visuales y de abstracción en la plantilla"
 
 git push origin master
