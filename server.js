@@ -5,6 +5,7 @@ var MongoClient = require('mongodb').MongoClient;
 var mustacheExpress = require('mustache-express');
 var login = require('./login');
 var menu = require('./menu');
+var aulas = require('./aulas');
 
 var app = express();
 
@@ -30,6 +31,7 @@ MongoClient.connect('mongodb://localhost/cua_uam_ueas', function (err, db) {
 
 	login.set(app, db);
 	menu.set(app, db);
+	aulas.set(app, db);
 });
 
 http.createServer(app).listen(8080, function () {

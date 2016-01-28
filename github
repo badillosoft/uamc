@@ -1,5 +1,5 @@
 git add .
 
-git commit -m "Se generalizo la plantilla menu.mustache"
+git commit -m "Se creo la primer interfaz para administrar las aulas"
 
 git push origin master

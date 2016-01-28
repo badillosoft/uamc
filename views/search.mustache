@@ -14,17 +14,62 @@
 	</head>
 	<body>
 		<div class="container panel">
-			<h1 class="text-center">{{title}}</h1>
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">{{title}}</a>
+          </div>
 
-			<div class="sub-panel">
-        {{#buttons}}
-				<button class="btn btn-primary btn-lg {{class}}"
-          onclick="{{method}}()">{{description}}</button>
-        {{/buttons}}
-			</div>
+          <div class="input-group"
+            style="margin-top: 10px; margin-left: auto; margin-right: auto; max-width: 600px;">
+              <input class="form-control" type="text"
+                      placeholder="{{search_title}}" autofocus>
+              <span class="input-group-btn">
+                  <button class="btn btn-danger" onclick="search()">
+                      <span
+                          class="glyphicon glyphicon-search">
+                      </span>
+                  </button>
+              </span>
+          </div>
 
-      <div style="margin-top: 50px; background-color: #333; width: 100%; height: 300px">
+        </div>
+      </nav>
+
+      <div class="sub-panel-nav">
+        <div class="row">
+          <div class="col-xs-{{right_size}}">
+            {{{right_title}}}
+          </div>
+          <div class="col-xs-{{left_size}}">
+            {{{left_title}}}
+          </div>
+        </div>
       </div>
+
+      <div class="list-group">
+        {{#items}}
+          <a class="list-group-item" href="#">
+            <div class="row">
+              <div class="col-xs-{{right_size}}">
+                {{{right.content}}}
+                {{#right.notifications}}
+                  <span class="badge pull-right"
+                    style="background-color: #F77">{{right.notifications}}</span>
+                {{/right.notifications}}
+              </div>
+              <div class="col-xs-{{left_size}}">
+                {{{left.content}}}
+                {{#left.notifications}}
+                  <span class="badge pull-right"
+                    style="background-color: #F77">{{left.notifications}}</span>
+                {{/left.notifications}}
+              </div>
+            </div>
+          </a>
+        {{/items}}
+      </div>
+
 		</div>
 	</body>
 </html>
