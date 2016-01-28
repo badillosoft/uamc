@@ -1,5 +1,5 @@
 git add .
 
-git commit -m "Se agrego el menu principal: /menu.js, /public/js/menu.js, /views/menu.mustache"
+git commit -m "Se generalizo la plantilla menu.mustache"
 
 git push origin master

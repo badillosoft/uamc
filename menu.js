@@ -14,7 +14,21 @@ var self = {
   get_routes: {
     '/': function (req, res) {
       res.render('menu', {
-        title: 'Asignador de UEAs'
+        title: 'Asignador de UEAs',
+        buttons: [
+          {
+            type: 'primary',
+            class: 'pull-left',
+            method: 'ver_aulas',
+            description: 'Ver Aulas'
+          },
+          {
+            type: 'success',
+            class: 'pull-right',
+            method: 'ver_ueas',
+            description: 'Ver UEAs'
+          }
+        ]
       });
     }
   },
