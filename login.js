@@ -36,20 +36,20 @@ var self = {
 	login: function (username, password, success, error) {
 		var users = self.db.collection('users');
 
-			console.log('Ingresando al usuario: ' + username);
+		console.log('Ingresando al usuario: ' + username);
 
-			var query = { username: username, password: password };
+		var query = { username: username, password: password };
 
-			users.findOne(query, function (err, user) {
-				if (!!err || !user) {
-					console.log('! El usuario [' + username + '] no pudo acceder');
-					error('Los datos de acceso son incorrectos, intentelo nuevamente');
-					return;
-				}
+		users.findOne(query, function (err, user) {
+			if (!!err || !user) {
+				console.log('! El usuario [' + username + '] no pudo acceder');
+				error('Los datos de acceso son incorrectos, intentelo nuevamente');
+				return;
+			}
 
-				console.log('> El usuario [' + username + '] ha ingresado');
-				self.update(username, success, error);
-			});
+			console.log('> El usuario [' + username + '] ha ingresado');
+			self.update(username, success, error);
+		});
 	},
 	validate: function (username, token, success, error) {
 		var users = self.db.collection('users');

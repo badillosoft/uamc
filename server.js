@@ -5,7 +5,7 @@ var MongoClient = require('mongodb').MongoClient;
 var mustacheExpress = require('mustache-express');
 var login = require('./login');
 var menu = require('./menu');
-var aulas = require('./aulas');
+var aulas = require('./models/aulas/aulas-routes');
 
 var app = express();
 

@@ -3,3 +3,5 @@ git add .
 git commit -m "Se arreglaron algunos detalles visuales y de abstracción en la plantilla"
 
 git push origin master
+
+tput reset
