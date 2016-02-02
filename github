@@ -1,6 +1,6 @@
 git add .
 
-git commit -m "Se modificó el flujo de trabajo creando un archivo para rutas y otro para el controlador del modelo dado. Se implementó sintaxis ES6"
+git commit -m "Se incluyo una ruta para buscar aulas y algunas mejoras sintácticas menores"
 
 git push origin master
 

@@ -60,6 +60,32 @@ var self = {
     '/aulas/new': (req, res) => {
       res.send('Creando una nueva aula');
     },
+    '/aulas/search': (req, res) => {
+      var q = req.query.q || '';
+
+      q = q.replace(/\s+/, '|');
+
+      var qs = [];
+
+      for (var qi of q.split('|')) {
+        qs.push({ clave: { $regex: q, $options: 'i' } });
+        qs.push({ piso: Number(q) });
+        qs.push({ numero: Number(q) });
+        qs.push({ descripcion: { $regex: q, $options: 'i' } });
+      }
+
+      console.log(`Buscando: ${q}`);
+
+      var query = {
+        $or: qs
+      };
+
+      self.controller.find(query, {}, (aulas) => {
+        res.render('search', aulas);
+      }, (err) => {
+        res.send(err);
+      });
+    },
     '/aulas/:clave': (req, res) => {
       self.controller.find({
         clave: req.params.clave
