@@ -1,6 +1,6 @@
 git add .
 
-git commit -m "Se arreglaron algunos detalles visuales y de abstracción en la plantilla"
+git commit -m "Se modificó el flujo de trabajo creando un archivo para rutas y otro para el controlador del modelo dado. Se implementó sintaxis ES6"
 
 git push origin master
 

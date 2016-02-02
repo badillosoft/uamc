@@ -20,11 +20,12 @@ var self = {
         id: aula.clave,
         right: {
           class: 'text-center',
-          content: '<strong>' + aula.piso + '</strong>'
+          content: `<strong>${aula.piso}</strong>`
         },
         left: {
-          content: '<em>' + (aula.numero || '#') + ' - ' +
-            (aula.descripcion || 'Sin descripción') + '</em>',
+          content: `<em>
+            ${aula.numero || "#"} - ${aula.descripcion || "Sin descripción"}
+            </em>`,
           notifications: 0
         }
       };
@@ -51,6 +52,18 @@ var self = {
   get_routes: {
     '/aulas': (req, res) => {
       self.controller.find({}, {}, (aulas) => {
+        res.render('search', aulas);
+      }, (err) => {
+        res.send(err);
+      });
+    },
+    '/aulas/new': (req, res) => {
+      res.send('Creando una nueva aula');
+    },
+    '/aulas/:clave': (req, res) => {
+      self.controller.find({
+        clave: req.params.clave
+      }, {}, (aulas) => {
         res.render('search', aulas);
       }, (err) => {
         res.send(err);
