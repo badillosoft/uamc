@@ -1,6 +1,6 @@
 git add .
 
-git commit -m "Se incluyo una ruta para buscar aulas y algunas mejoras sintácticas menores"
+git commit -m "Se integró la funcionalidad de busqueda"
 
 git push origin master
 

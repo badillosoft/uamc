@@ -24,7 +24,8 @@ var self = {
         },
         left: {
           content: `<em>
-            ${aula.numero || "#"} - ${aula.descripcion || "Sin descripción"}
+            ${aula.numero || "#"} -
+            ${aula.descripcion || "Sin descripción"}
             </em>`,
           notifications: 0
         }
@@ -33,6 +34,7 @@ var self = {
 
     self.controller.render = (aulas) => {
       return {
+        controller: 'aulas',
         title: 'Aulas',
         right: {
           class: 'text-center',
@@ -81,6 +83,11 @@ var self = {
       };
 
       self.controller.find(query, {}, (aulas) => {
+        aulas.message = {
+          type: 'info',
+          content: `Se encontraron <strong>
+            ${aulas.items.length}</strong> aulas`
+        };
         res.render('search', aulas);
       }, (err) => {
         res.send(err);

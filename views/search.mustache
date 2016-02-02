@@ -10,7 +10,7 @@
 		<script src="/js/jquery.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
 		<script src="/js/mustache.js"></script>
-		<script src="/js/menu.js"></script>
+		<script src="/js/{{controller}}.js"></script>
 	</head>
 	<body>
 		<div class="container panel">
@@ -20,9 +20,8 @@
             <a class="navbar-brand" href="#">{{title}}</a>
           </div>
 
-          <div class="input-group"
-            style="margin-top: 10px; margin-left: auto; margin-right: auto; max-width: 600px;">
-              <input class="form-control" type="text"
+					<div class="input-group input-header">
+              <input class="form-control" type="text" id="txt-search"
                       placeholder="{{search_title}}" autofocus>
               <span class="input-group-btn">
                   <button class="btn btn-danger" onclick="search()">
@@ -37,6 +36,16 @@
       </nav>
 
       <div class="sub-panel-nav">
+				{{#message}}
+				<div class="alert alert-{{type}} alert-dismissible">
+					<button type="button" class="close" data-dismiss="alert"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					{{{content}}}
+				</div>
+				{{/message}}
+
         <div class="row">
           <div class="col-xs-{{right.size}} text-center">
             {{{right.title}}}
@@ -49,7 +58,7 @@
 
       <div class="list-group">
         {{#items}}
-          <a id="link_{{id}}" class="list-group-item" href="#">
+          <a id="link_{{id}}" class="list-group-item" href="#txt-search">
             <div class="row">
               <div class="col-xs-{{right.size}} {{right.class}}">
                 {{{right.content}}}

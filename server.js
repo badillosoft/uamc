@@ -1,6 +1,6 @@
 var http = require('http');
 var express = require('express');
-var bodyParser = require('body-parser');
+//var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient;
 var mustacheExpress = require('mustache-express');
 var login = require('./login');
@@ -13,7 +13,7 @@ app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
 app.set('views', __dirname + '/views');
 
-app.use(bodyParser());
+//app.use(bodyParser());
 app.use(express.static('public'));
 
 MongoClient.connect('mongodb://localhost/cua_uam_ueas', (err, db) => {
