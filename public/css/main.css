@@ -11,6 +11,11 @@
 	margin-bottom: 20px;
 }
 
+.input-footer {
+	margin-top: 10px;
+	max-width: 600px;
+}
+
 .input-header {
 	margin-top: 10px;
 	margin-left: auto;

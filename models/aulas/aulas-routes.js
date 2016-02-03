@@ -47,22 +47,19 @@ var self = {
           size: 9
         },
         search_title: 'Escribe el nombre del piso o aula',
-        items: aulas
+        items: aulas,
+        buttons: [
+          {
+            class: 'success',
+            controller: 'nueva',
+            content: 'Nueva Aula'
+          }
+        ]
       };
     };
   },
   get_routes: {
     '/aulas': (req, res) => {
-      self.controller.find({}, {}, (aulas) => {
-        res.render('search', aulas);
-      }, (err) => {
-        res.send(err);
-      });
-    },
-    '/aulas/new': (req, res) => {
-      res.send('Creando una nueva aula');
-    },
-    '/aulas/search': (req, res) => {
       var q = req.query.q || '';
 
       q = q.replace(/\s+/, '|');
@@ -92,6 +89,9 @@ var self = {
       }, (err) => {
         res.send(err);
       });
+    },
+    '/aulas/nueva': (req, res) => {
+      res.send('Creando una nueva aula');
     },
     '/aulas/:clave': (req, res) => {
       self.controller.find({

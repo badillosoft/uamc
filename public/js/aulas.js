@@ -13,5 +13,9 @@ function search(q) {
     q = document.getElementById('txt-search').value;
   }
 
-  window.location.replace('/aulas/search?q=' + q);
+  window.location = '/aulas?q=' + q;
+}
+
+function nueva() {
+  console.log('Creando nueva aula');
 }

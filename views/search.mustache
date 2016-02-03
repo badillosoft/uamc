@@ -25,9 +25,7 @@
                       placeholder="{{search_title}}" autofocus>
               <span class="input-group-btn">
                   <button class="btn btn-danger" onclick="search()">
-                      <span
-                          class="glyphicon glyphicon-search">
-                      </span>
+                      <span class="glyphicon glyphicon-search"></span>
                   </button>
               </span>
           </div>
@@ -58,7 +56,7 @@
 
       <div class="list-group">
         {{#items}}
-          <a id="link_{{id}}" class="list-group-item" href="#txt-search">
+          <a id="link_{{id}}" class="list-group-item" onclick="alert('Hola')">
             <div class="row">
               <div class="col-xs-{{right.size}} {{right.class}}">
                 {{{right.content}}}
@@ -78,6 +76,20 @@
           </a>
         {{/items}}
       </div>
+
+			<br><br><br>
+
+			<nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container-fluid">
+					<div class="input-footer">
+						{{#buttons}}
+						<button class="btn btn-{{class}}" onclick="{{controller}}()">
+							{{content}}
+						</button>
+						{{/buttons}}
+					</div>
+        </div>
+      </nav>
 
 		</div>
 	</body>
